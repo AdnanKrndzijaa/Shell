@@ -10,6 +10,18 @@
 #### Question 2:
 
 ## Description
+### Shell can be started in two ways:
+*First way*
+```
+gcc -Wall -o shell shell.c
+./shell
+```
+*Second way*
+```
+gcc 
+.\a.out
+```
+
 - We made an initialization of the shell, where at start the user can see the Welcome message and his/her username printed on the terminal screen.
 - Immediately upon entering the shell, a prompt is displayed with a precisely defined layout according to the instructions. Two colors are applied to the appearance of the prompt, purple and cyan, which are made via functions, ```purple()``` and ```cyan()```, as well as the ```colorReset()``` function, which resets the color of the letters each time and returns to the technical settings.
 ```
