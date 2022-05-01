@@ -28,6 +28,18 @@ void colorReset()
 	printf("\033[0m");
 }
 ```
+- Also one interesting and very useful thing that we have implemented is the console with all the commands in our shell, ```consoleCommands()```, which greatly simplifies the management and entry of command names in our shell.
+```
+listOfCommands[0] = "exit";
+listOfCommands[1] = "rm";
+listOfCommands[2] = "cat";
+listOfCommands[3] = "clear";
+listOfCommands[4] = "cowsay";
+listOfCommands[5] = "fwe";
+listOfCommands[6] = "poli";
+listOfCommands[7] = "forkbomb";
+```
+- Almost all commands in this function are defined via **switch statement** with the help of cases.
 ##### *rm command*
 We have implemented a rm (remove) command that will delete files, and it is called simply using ```rm filename```.
 
