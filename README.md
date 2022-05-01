@@ -10,13 +10,7 @@
 #### Question 2:
 
 ## Description
-### Shell can be started in two ways:
-*First way*
-```
-gcc -Wall -o shell shell.c
-./shell
-```
-*Second way*
+### You can run A&A Shell as follows:
 ```
 gcc 
 .\a.out
