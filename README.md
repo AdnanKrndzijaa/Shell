@@ -12,8 +12,8 @@
 ## Description
 ### You can run A&A Shell as follows:
 ```
-gcc 
-.\a.out
+gcc shell.c -lreadline
+./a.out
 ```
 
 - We made an initialization of the shell, where at start the user can see the Welcome message and his/her username printed on the terminal screen.
