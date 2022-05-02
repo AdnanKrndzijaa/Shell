@@ -70,3 +70,20 @@ We have implemented a exit command that will which will shut down the A&A shell 
 ##### *forkbomb command*
 We have implemented a forkbomb command that will crash your computer and cause great damage, and it is called simply using ```forkbomb```. 
 After calling the command, the question arises to warn the user that (s)he must enter 'YES' (to continue the process of this command) or 'NO' (if (s)he accidentally entered the command and does not want to execute a forkbomb).
+
+## Sources
+1. https://www.geeksforgeeks.org/making-linux-shell-c/
+2. https://fresh2refresh.com/c-programming/c-file-handling/remove-function-c/
+3. https://blog.devgenius.io/lets-build-a-linux-shell-part-i-954c95911501
+4. http://www.compciv.org/recipes/cli/basic-shell-scripts/
+5. https://www.quora.com/How-do-I-create-my-own-shell-in-Linux
+6. https://en.wikipedia.org/wiki/Unix_shell
+7. https://www.programiz.com/c-programming/examples/concatenate-string
+8. https://www.geeksforgeeks.org/methods-to-concatenate-string-in-c-c-with-examples/
+9. https://www.geeksforgeeks.org/fork-bomb/#:~:text=The%20fork%20bomb%20is%20a,destroy%20all%20instances%20of%20it
+10. https://www.ibm.com/docs/en/i/7.2?topic=ssw_ibm_i_72/apis/sigkill.htm
+11. https://aljensencprogramming.wordpress.com/2014/05/15/the-kill-function-in-c/
+12. https://dev.to/ifenna__/adding-colors-to-bash-scripts-48g4
+13. https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+14. https://linuxhint.com/linux-pipe-command-examples/
+15. https://stackoverflow.com/questions/33912024/shell-program-with-pipes-in-c
