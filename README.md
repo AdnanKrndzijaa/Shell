@@ -58,6 +58,9 @@ return 0;
 ## Description
 ##### You can run A&A Shell as follows:
 ```
+sudo apt-get install libreadline-dev
+```
+```
 gcc shell.c -lreadline
 ./a.out
 ```
