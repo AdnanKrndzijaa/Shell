@@ -50,8 +50,8 @@ return 0;
 }
 ```
 #### Question 2: What happens during a context switch? Do we want the OS to perform many or few context switches? Explain.
--
-
+- Context switching is the process of storing a process's context or state such that it can be reloaded and execution continued from the same point as before. A multitasking operating system has this capability, which allows numerous programs to share a single CPU.
+- 
 ## Description
 ##### You can run A&A Shell as follows:
 ```
