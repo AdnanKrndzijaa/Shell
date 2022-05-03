@@ -8,7 +8,7 @@
 [shell.c](/shell.c)
 
 ## Answers
-#### Question 1: What does ```mmap()``` do?
+### Question 1: What does ```mmap()``` do?
 - To map between the process address space and files or devices, use the mmap() function. 
 When a file is mapped to the process address space, it can be accessed in the same way that a string is accessed in a program. 
 This is one of the most efficient ways to retrieve data in a file, and it gives a natural encoding interface for a data structure that can be evaluated without having to deal with the abstraction of reading and writing a file. 
@@ -16,9 +16,10 @@ We'll look at how to utilize the mmap() function in Linux in this p
 - The function has 6 arguments: 
 1. Address: This option specifies the desired mapping address at the start. If the second mapping is missing, the core will select a nearby page limit and build the mapping; otherwise, the kernel will select a new address. If this parameter is null, the core is free to place the mapping anywhere it sees fit.
 2. Length: The number of bytes to be mapped is specified here.
+3. Protect: This parameter is used to restrict the types of access that are permitted. The following code can be a logical 'OR' argument.
 4. Flags: This argument is used to modify the map's appearance. Here are a few examples of popular flag values: **MAP_SHARED**, **MAP_PRIVATE**, **MAP_ANONYMOUS / MAP_ANON** and **MAP_FIXED**
-5. Filedes:
-6. Offset: 
+5. Filedes: It is necessary to map this file descriptor.
+6. Offset: This is a change from the beginning of the file mapping. Simply stated, when a file is opened on the applicants descriptor, mapping is associated with (offset) to (offset + length-1) bytes.
 
 - Example of ```mmap()``` from [here](https://linuxhint.com/using_mmap_function_linux/#:~:text=The%20mmap()%20function%20is,an%20array%20in%20the%20program).
 ```
@@ -52,9 +53,16 @@ if(err != 0){
 return 0;
 }
 ```
-#### Question 2: What happens during a context switch? Do we want the OS to perform many or few context switches? Explain.
+### Question 2: What happens during a context switch? Do we want the OS to perform many or few context switches? Explain.
 - Context switching is the process of storing a process's context or state such that it can be reloaded and execution continued from the same point as before. A multitasking operating system has this capability, which allows numerous programs to share a single CPU.
-- 
+- Context switching occurs as a result of three major factors. This is what they are: 
+   - Multitasking: In a multitasking environment, one process is switched off the CPU so that another can execute. The state of the old process is saved, and the state of the new process is loaded. The scheduler on a pre-emptive system may switch off processes. 
+   - Interrupt Handling: When an interrupt occurs, the hardware shifts a portion of the context. This happens on its own. To reduce the amount of time it takes to handle the interrupt, only a portion of the context is updated. 
+   - User and Kernel Mode Switching: When the operating system requires a move from user mode to kernel mode, a context switch may occur.
+- The present state of the process must be maintained so that it can be restored when it is rescheduled for execution. All of the registers that the process may use, especially the program counter, are included in the process state, as well as any other operating system-specific data that may be required. A process control block (PCB) or switchframe is a data structure that stores this information. The PCB may be stored in kernel memory on a per-process stack (rather than the user-mode call stack), or it could be placed in a particular operating system-defined data structure. A handle to the PCB is added to a queue of ready-to-run processes, known as the ready queue.
+- Because one process' execution has been effectively halted, the operating system can now swap context by selecting a process from the ready queue and restoring its PCB. The program counter from the PCB is loaded as a result, and execution can continue in the selected process. The priority of the process and the thread can determine which process is selected from the ready queue (i.e., it may be a priority queue).
+##### Steps for Content Switching
+![alt figure](https://static.javatpoint.com/operating-system/images/what-is-the-context-switching-in-the-operating-system.png)
 ## Description
 ##### You can run A&A Shell as follows:
 ```
