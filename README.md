@@ -131,3 +131,5 @@ After calling the command, the question arises to warn the user that (s)he must 
 14. https://linuxhint.com/linux-pipe-command-examples/
 15. https://stackoverflow.com/questions/33912024/shell-program-with-pipes-in-c
 16. https://linuxhint.com/using_mmap_function_linux/#:~:text=The%20mmap()%20function%20is,an%20array%20in%20the%20program.
+17. https://en.m.wikipedia.org/wiki/Context_switch
+18. https://www.tutorialspoint.com/what-is-context-switching-in-operating-system
