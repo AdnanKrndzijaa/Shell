@@ -5,9 +5,52 @@
 - Adnan Krndžija
 
 ## Answers
-#### Question 1: 
+#### Question 1: What does ```mmap()``` do?
+- To map between the process address space and files or devices, use the mmap() function. 
+When a file is mapped to the process address space, it can be accessed in the same way that a string is accessed in a program. 
+This is one of the most efficient ways to retrieve data in a file, and it gives a natural encoding interface for a data structure that can be evaluated without having to deal with the abstraction of reading and writing a file. 
+We'll look at how to utilize the mmap() function in Linux in this post.
+- The function has 6 arguments: 
+1. Address: This option specifies the desired mapping address at the start. If the second mapping is missing, the core will select a nearby page limit and build the mapping; otherwise, the kernel will select a new address. If this parameter is null, the core is free to place the mapping anywhere it sees fit.
+2. Length: The number of bytes to be mapped is specified here.
+4. Flags: This argument is used to modify the map's appearance. Here are a few examples of popular flag values: **MAP_SHARED**, **MAP_PRIVATE**, **MAP_ANONYMOUS / MAP_ANON** and **MAP_FIXED**
+5. Filedes:
+6. Offset: 
 
-#### Question 2:
+- Example of ```mmap()``` from [here](https://linuxhint.com/using_mmap_function_linux/#:~:text=The%20mmap()%20function%20is,an%20array%20in%20the%20program).
+```
+#include <stdio.h>
+#include <sys/mman.h>
+
+int main(){
+
+int N=5;
+int *ptr = mmap ( NULL, N*sizeof(int),
+ PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );
+
+if(ptr == MAP_FAILED){
+    printf("Mapping Failed\n");
+    return 1;
+}
+
+for(int i=0; i<N; i++)
+    ptr[i] = i*10;
+
+for(int i=0; i<N; i++)
+    printf("[%d] ",ptr[i]);
+
+printf("\n");
+int err = munmap(ptr, 10*sizeof(int));
+if(err != 0){
+    printf("UnMapping Failed\n");
+    return 1;
+}
+
+return 0;
+}
+```
+#### Question 2: What happens during a context switch? Do we want the OS to perform many or few context switches? Explain.
+-
 
 ## Description
 ##### You can run A&A Shell as follows:
@@ -87,3 +130,4 @@ After calling the command, the question arises to warn the user that (s)he must 
 13. https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
 14. https://linuxhint.com/linux-pipe-command-examples/
 15. https://stackoverflow.com/questions/33912024/shell-program-with-pipes-in-c
+16. https://linuxhint.com/using_mmap_function_linux/#:~:text=The%20mmap()%20function%20is,an%20array%20in%20the%20program.
