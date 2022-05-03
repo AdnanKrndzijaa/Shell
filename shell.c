@@ -297,9 +297,9 @@ void forkbomb()
 
 	if(input[0] == 'YES')
 	{
-		printf("XXXXXXXXXXXXX\n");
+		printf("XXXXXXXXXXXX\n");
 		printf("GAME OVER!\n");
-		printf("XXXXXXXXXXXXX\n");
+		printf("XXXXXXXXXXXX\n");
 		while(1){
 			fork();
 		}
